@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Empréstimos</title>
+    <meta name="description" content="Calcule suas parcelas de empréstimos pessoais ou financiamentos de forma rápida e prática, com juros compostos incluídos. Saiba Mais!">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-dark text-light">
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Simulador de Empréstimos</h1>
+
+        <!-- Instruções -->
+        <div class="card bg-secondary mb-4">
+            <div class="card-body">
+                <h5 class="card-title">É possível calcular:</h5>
+                <ul>
+                    <li>Empréstimos com parcelas fixas</li>
+                    <li>Taxa de juros composta e constante</li>
+                    <li>Sem carência, sem variação de taxa</li>
+                    <li>Pagamentos regulares (ex: 1 por mês)</li>
+                </ul>
+                <p>Exemplo: crédito pessoal, financiamento de celular, empréstimo consignado comum.</p>
+            </div>
+        </div>
+
+        <!-- Formulário -->
+        <div class="card bg-secondary p-4 mb-4">
+            <div class="mb-3">
+                <label for="valor" class="form-label">Valor da Dívida</label>
+                <input type="number" class="form-control" id="valor" placeholder="Digite o valor da dívida" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="taxa" class="form-label">Taxa de Juros (%)</label>
+                <input type="number" class="form-control" id="taxa" placeholder="Digite a taxa de juros" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="parcelas" class="form-label">Número de Parcelas</label>
+                <input type="number" class="form-control" id="parcelas" placeholder="Digite a quantidade de parcelas" required>
+            </div>
+
+            <button onclick="calcular()" class="btn btn-success">Calcular</button>
+        </div>
+
+        <!-- Resultado -->
+        <div class="alert alert-info text-center fs-5" role="alert">
+            Valor Total de cada Parcela: <span id="t">0,00</span>
+        </div>
+        <div class="alert alert-info text-center fs-5" role="alert">
+            Valor Total: <span id="tt">0,00</span>
+        </div>
+    </div>
+    <p>Porfavor, compartilhe o site para adicionar mais melhorias</p>
+<button type="button" onclick="copiarTexto()" value="" class="btn btn-outline-success">Copiar Link</button>
+</body>
+
+</html>
