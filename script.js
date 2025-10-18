@@ -1,5 +1,3 @@
-
-
 function calcular() {
 let vTotal; 
 let p = parseFloat(document.getElementById('valor').value)
@@ -11,11 +9,18 @@ vTotal = p* (cima/baixo)
 let e = vTotal * n
 document.getElementById('t').textContent=vTotal.toFixed(2); 
 document.getElementById('tt').textContent=e.toFixed(2); 
-console.log (p,i,n);
+if (!i || !p || !n){
+  alert("Preencha todos os campos corretamente porfavor.")
+  document.getElementById('t').textContent=""; 
+document.getElementById('tt').textContent="";
+ return;
+
+}
 }
 
-function copiarTexto() {
-  const copiar = document.getElementById('c');
+
+function c() {
+  const input = document.getElementById('c');
   navigator.clipboard.writeText(input.value)
     .then(() => alert("Texto copiado com sucesso!"))
     .catch(() => alert("Falha ao copiar o texto."));
